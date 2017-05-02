@@ -18,22 +18,20 @@ class Book(models.Model):
             self.title, self.author, self.published_date)
 
 
+logger = logging.getLogger(__name__)
+actual_time = str(datetime.now())
+
 @receiver(post_save, sender=Book)
 def log_created_or_updated(sender, instance, created, *args, **kwargs):
-    logger = logging.getLogger(__name__)
     if not created:
-        current_time = str(datetime.now())
-        logger.debug('Book ' + instance.title + ' updated at: ' + current_time)
+        logger.debug('Book ' + instance.title + ' updated at: ' + actual_time)
     else:
-        create_time = str(datetime.now())
-        logger.debug('Book ' + instance.title + ' created at: ' + create_time)
+        logger.debug('Book ' + instance.title + ' created at: ' + actual_time)
 
 
 @receiver(post_delete, sender=Book)
 def log_deleted(sender, instance, *args, **kwargs):
-    logger = logging.getLogger(__name__)
-    delete_time = str(datetime.now())
-    logger.debug('Book ' + instance.title + ' deleted at: ' + delete_time)
+    logger.debug('Book ' + instance.title + ' deleted at: ' + actual_time)
 
 
 class Request(models.Model):
