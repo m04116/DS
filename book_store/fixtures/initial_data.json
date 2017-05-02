@@ -1,0 +1,29 @@
+[
+    {
+    "model": "book_store.book",
+    "pk": 1,
+    "fields": {
+      "title": "Don Quixote",
+      "author": "Miguel de Cervantes",
+      "isbn": "1111111111111",
+      "price": "50"}
+  },
+  {
+  "model": "book_store.book",
+  "pk": 2,
+  "fields": {
+    "title": "The Odyssey",
+    "author": "Homer",
+    "isbn": "2222222222222",
+    "price": "100"}
+},
+{
+"model": "book_store.book",
+"pk": 3,
+"fields": {
+  "title": "Hamlet",
+  "author": "William Shakespeare",
+  "isbn": "3333333333333",
+  "price": "150"}
+}
+]

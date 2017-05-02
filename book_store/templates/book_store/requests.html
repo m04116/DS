@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h3>List of requests</h3>
+    <ol>
+        {% for request in request_list %}
+        <li>
+            <p>
+                date: {{request.request_date}};
+                scheme:  {{request.scheme}};
+                path: {{request.path}}
+                method: {{request.method}}
+                content_type: {{request.content_type}}
+            </p>
+        </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
