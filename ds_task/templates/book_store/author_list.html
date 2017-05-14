@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Author List</h1>
+    <br>
+    {% if author_list %}
+        <ul>
+
+        {% for author in author_list %}
+            <li>
+                <p>
+                    {{author.name}}
+                    <small>
+                        ({{author.date_of_birth}} - {{author.date_of_death}})
+                    </small>
+                </p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'author_update' author.pk %}">Edit author</a>
+                    <a href="{% url 'author_delete' author.pk %}">Delete author</a>
+                {% endif %}
+            </li>
+            <br>
+            <br>
+        {% endfor %}
+
+        </ul>
+    {% else %}
+        <p>There are no authors in the list.</p>
+    {% endif %}
+
+{% endblock %}

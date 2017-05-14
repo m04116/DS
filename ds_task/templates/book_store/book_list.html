@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load admin_helpers %}
+
+{% block content %}
+    <h1>Book List</h1>
+    <br>
+    {% if book_list %}
+        <ul>
+
+        {% for book in book_list %}
+            <li>
+                <h4>
+                    {{ book.title }} - {{book.author.name}}
+                    <small>
+                        ({{book.author.date_of_birth}} - {{book.author.date_of_death}})
+                    </small>
+                </h4>
+                <p>Price: {{ book.price }} UAH</p>
+                <p>ISBN: {{ book.isbn }}</p>
+                <p>{{ book.published_date }}</p>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'book_update' book.pk %}">Edit book</a>
+                    <a href="{% admin_edit book %}">Edit in Admin</a>
+
+                    {# {% admin_edit book %} #}
+
+                    <a href="{% url 'book_delete' book.pk %}">Delete book</a>
+                {% endif %}
+
+            </li>
+            <br>
+            <br>
+        {% endfor %}
+
+        </ul>
+    {% else %}
+        <p>There are no books in the library.</p>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,55 @@
+[
+    {
+        "model": "book_store.author",
+        "pk": 1,
+        "fields": {
+            "name": "Miguel de Cervantes",
+            "date_of_birth": "1574-09-29",
+            "date_of_death": "1616-04-22"}
+    },
+    {
+    "model": "book_store.book",
+    "pk": 1,
+    "fields": {
+      "title": "Don Quixote",
+      "author": 1,
+      "isbn": "1111111111111",
+      "price": 50}
+  },
+
+  {
+      "model": "book_store.author",
+      "pk": 2,
+      "fields": {
+          "name": "Leo Tolstoy",
+          "date_of_birth": "1828-09-09",
+          "date_of_death": "1910-11-20"}
+  },
+  {
+  "model": "book_store.book",
+  "pk": 2,
+  "fields": {
+    "title": "War and Peace",
+    "author": 2,
+    "isbn": "2222222222222",
+    "price": 100}
+},
+
+{
+    "model": "book_store.author",
+    "pk": 3,
+    "fields": {
+        "name": "William Shakespeare",
+        "date_of_birth": "1564-04-23",
+        "date_of_death": "1616-04-23"}
+},
+{
+"model": "book_store.book",
+"pk": 3,
+"fields": {
+  "title": "Hamlet",
+  "author": 3,
+  "isbn": "3333333333333",
+  "price": 150}
+}
+]
