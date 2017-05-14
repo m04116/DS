@@ -2,7 +2,6 @@ from django import forms
 from django.forms.extras.widgets import SelectDateWidget
 from datetime import date
 
-
 from .models import Author, Book
 
 

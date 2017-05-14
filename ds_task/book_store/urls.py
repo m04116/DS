@@ -3,6 +3,7 @@ from django.conf.urls import url
 from .views import (AuthorListView, AuthorCreateView, AuthorDeleteView, AuthorUpdateView,
     BookListView, BookCreateView, BookDeleteView, BookUpdateView)
 
+
 urlpatterns = [
     url(r'^$', BookListView.as_view(), name='books'),
     url(r'^book/create/$', BookCreateView.as_view(), name='book_create'),
