@@ -43,8 +43,11 @@
     </div>
 </div>
 
-<p>{{ copyright_start_year }} {{ copyright_current_year }}</p>
-<p>{{ copyright_start_year }} {% now 'Y' %}</p>
+<div class="copyright">
+    <p>{{ copyright_start_year }} {{ copyright_current_year }}</p>
+    <p>{{ copyright_start_year }} {% now 'Y' %}</p>
+    <p>(c) 2016 - {{ copyright_current_year }}</p>
+</div>
 
 </body>
 </html>
